@@ -1,0 +1,17 @@
+html, body, #app{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/*面包屑*/
+.el-breadcrumb{
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+/*卡片样式*/
+.el-card{
+box-shadow: 0 1px 1px rgba(0,0,0,0.15)!important;
+}
+.el-table {
+  margin: 12px 0;
+}

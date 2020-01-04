@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.95.200.155:3306/shop?characterEncoding=utf-8
+    password: shop
+    username: shop
+    hikari:
+      auto-commit: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 1106
