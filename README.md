@@ -15,7 +15,7 @@
 #### 6.JWT
 
 ### 登录页面
-![lwdHSI.png](https://s2.ax1x.com/2020/01/04/lwdHSI.png)  
+![](https://ftp.bmp.ovh/imgs/2020/01/ea2be4222e4891ad.png)
 ### 后台主界面 
 ![lwdzkQ.png](https://s2.ax1x.com/2020/01/04/lwdzkQ.png) 
 ### 用户管理模块
