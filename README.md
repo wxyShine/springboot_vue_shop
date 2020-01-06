@@ -13,6 +13,7 @@
 #### 4.Hikari
 #### 5.Shiro
 #### 6.JWT
+#### 7.Redis
 
 ### 登录界面
 ![lw0AgI.png](https://s2.ax1x.com/2020/01/04/lw0AgI.png)
