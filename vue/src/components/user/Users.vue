@@ -42,7 +42,7 @@
     </div>
   </el-dialog>
     <!--表格区域-->
-    <el-table style="width: 100%" :data="userList" border>
+    <el-table style="width: 100%" :data="userList.slice((currentPage-1)*pageSize,currentPage*pageSize)" border>
       <el-table-column  label="#"  width="60" prop="id">
       </el-table-column>
       <el-table-column label="姓名" prop="name">
@@ -76,11 +76,11 @@
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
-      :current-page="queryInfo.pagenum"
-      :page-sizes="[6, 8, 10, 50]"
-      :page-size="userInfo.size"
+      :current-page="currentPage"
+      :page-sizes="[1, 2, 5, 50]"
+      :page-size="pageSize"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="userInfo.totalElements">
+      :total="parseInt(total)">
     </el-pagination>
   </el-card>
   </div>
@@ -93,42 +93,37 @@ export default {
   },
   data() {
     return {
-      // 获取用户列表的参数
-      queryInfo: {
-        query: '',
-        pagenum: 1,
-        pagesize: 6
-      },
       userForm: {
         username: '',
         name: '',
         password: ''
       },
       userList: [],
-      userInfo: '',
       // 是否显示添加用户面板
-      addUSerVisible: false
+      addUSerVisible: false,
+      currentPage: 1,
+      pageSize: 1,
+      total: 0
     }
   },
   // name: 'Users',
   methods: {
     async getUserList() {
-      const { data: res } = await this.$axios.get('/users', { params: this.queryInfo })
-      this.userInfo = res.data
-      this.userList = res.data.content
+      const { data: res } = await this.$axios.get('/users')
+      this.userList = res.data
+      this.total = this.userList.length
+      console.log(this.userList)
     },
     add(userFormRef) {
       console.log(this.$refs[userFormRef])
     },
     handleSizeChange(newSize) {
       // pagesize改变触发
-      this.queryInfo.pagesize = newSize
-      this.getUserList()
+      this.pageSize = newSize
     },
     handleCurrentChange(newPage) {
       // 页码改变触发
-      this.queryInfo.pagenum = newPage
-      this.getUserList()
+      this.currentPage = newPage
     },
     async userChangeStatused(user) {
       // 用户状态改变

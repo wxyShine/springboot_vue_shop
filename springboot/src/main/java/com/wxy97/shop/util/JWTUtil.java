@@ -13,7 +13,7 @@ import java.util.Date;
  * @Date 20-1-3 上午10:17
  */
 public class JWTUtil {
-    //有效期
+    //有效期60分钟
     private static final long EXPIRE_TIME= 60*60*1000;
     //密钥盐
     private static final String TOKEN_SECRET="token123";

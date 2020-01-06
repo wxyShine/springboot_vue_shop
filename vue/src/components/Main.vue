@@ -17,7 +17,7 @@
          unique-opened :collapse-transition="false" :router="true"
          :default-active="$route.path">
          <!--一级菜单-->
-          <el-submenu :index="item.id.toString()"  v-for="item in menusList" :key="item.id">
+          <el-submenu :index="item.id+''"  v-for="item in menusList" :key="item.id">
             <!--一级菜单模板-->
             <template slot="title">
               <i :class="iconsObj[item.id]"></i>

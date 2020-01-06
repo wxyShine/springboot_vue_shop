@@ -3,6 +3,7 @@ import com.wxy97.shop.pojo.User;
 import com.wxy97.shop.result.Result;
 import com.wxy97.shop.result.ResultFactory;
 import com.wxy97.shop.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,15 +19,13 @@ public class UserControler {
 
     @Resource
     UserService userServiceImpl;
-    /**
-     * 分页查询
-     * @param pagenum 页码
-     * @param pagesize 每页条数
-     * @return
-     */
-    @RequestMapping("users")
-    public Result  getUsers(Integer pagenum,Integer pagesize){
-        return ResultFactory.buildSuccessResult(userServiceImpl.getUserListByPage(pagenum,pagesize),"分页查询用户");
+
+    @ApiOperation(value = "查询用户列表数据")
+    @RequestMapping(value = "users",method = RequestMethod.GET)
+    public Result  getUsers(){
+        //后端实现分页查询
+        //userServiceImpl.getUserListByPage(pagenum,pagesize);
+        return ResultFactory.buildSuccessResult(userServiceImpl.getUserList(),"查询所有用户");
     }
 
     /**

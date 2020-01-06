@@ -1,7 +1,8 @@
 package com.wxy97.shop.service;
 
 import com.wxy97.shop.pojo.User;
-import org.springframework.data.domain.Page;
+
+import java.util.List;
 
 /**
  * @Author: wxySmile
@@ -11,7 +12,15 @@ public interface UserService {
 
     User findByUsername(String username);
 
-    Page<User> getUserListByPage(Integer pagenum, Integer pagesize);
+/*    *//**
+     * 后端实现分页查询
+     * @param
+     * @param
+     * @return
+     *//*
+    Page<User> getUserListByPage(Integer pagenum, Integer pagesize);*/
+
+    List<User> getUserList();
 
     User updateOrSave(User user);
 

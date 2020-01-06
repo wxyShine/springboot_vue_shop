@@ -5,6 +5,9 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.HashMap;
+
 /**
  * @Author: wxySmile
  * @Date 20-1-2 下午2:13
@@ -24,6 +27,8 @@ public class ShiroConfig {
          * 设置安全管理器，将创建的安全管理器放进shiroFilterFactoryBean过滤工厂里面
          */
         shiroFilterFactoryBean.setSecurityManager(defaultSecurityManager);
+
+        HashMap<String, String> filterMap = new HashMap<>();
         return shiroFilterFactoryBean;
     }
 

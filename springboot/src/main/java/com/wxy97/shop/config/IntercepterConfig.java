@@ -4,9 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @Author: wxySmile
  * @Date 20-1-3 下午5:10
@@ -22,11 +19,9 @@ public class IntercepterConfig implements WebMvcConfigurer{
 
     @Override
     public void addInterceptors(InterceptorRegistry registry){
-        List<String> excludePath = new ArrayList<>();
-        excludePath.add("/login");
         registry.addInterceptor(tokenInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns(excludePath);
+                .excludePathPatterns("/login","/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");
         WebMvcConfigurer.super.addInterceptors(registry);
     }
 }

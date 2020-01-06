@@ -24,6 +24,8 @@ public class TokenInterceptor implements HandlerInterceptor {
             response.setStatus(HttpServletResponse.SC_OK);
             return true;
         }
+
+        System.out.println("请求地址"+request.getRequestURI());
         response.setCharacterEncoding("utf-8");
         //获取请求头的token Authorization属性
         String token = request.getHeader("Authorization");
@@ -40,7 +42,7 @@ public class TokenInterceptor implements HandlerInterceptor {
         try{
             Result result = ResultFactory.buildFailResult("token认证失败");
             response.getWriter().append(JsonUtils.toJson(result));
-            System.out.println("认证失败，未通过拦截器");
+            System.out.println("认证失败,未通过拦截器");
         }catch (Exception e){
             e.printStackTrace();
             response.sendError(500);

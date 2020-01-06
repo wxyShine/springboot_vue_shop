@@ -5,13 +5,17 @@ import com.wxy97.shop.pojo.User;
 import com.wxy97.shop.result.Result;
 import com.wxy97.shop.result.ResultFactory;
 import com.wxy97.shop.util.JWTUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.HashMap;
 
@@ -21,11 +25,10 @@ import java.util.HashMap;
  */
 @RestController
 public class LoginController {
-    /**
-     * 登录
-     * @param user 用户对象
-     * @return
-     */
+    @ApiOperation("登录")
+    @ApiImplicitParams({@ApiImplicitParam(name="username",value = "用户名",required = true),
+            @ApiImplicitParam(name = "password", value = "密码", required = true)})
+    @ApiImplicitParam(name="password",value = "密码",required = true)
     @RequestMapping(value = "login",method = RequestMethod.POST)
     public Result login(@RequestBody User user){
         SimpleHash simpleHash = new SimpleHash("MD5",user.getPassword(),user.getUsername(),1024);
@@ -63,4 +66,8 @@ public class LoginController {
         //打印出经过盐值、加密次数、md5后的密码
         System.out.println(simpleHash.toString());
     }*/
+
+    public static void main(String[] args) {
+
+    }
 }
