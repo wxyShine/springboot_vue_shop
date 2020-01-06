@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
     public List<User> getUserList() {
         List<User>  userList = (List<User>) redisUtil.hget("shop", "userList");
         if (userList == null){
-            System.out.println("缓存中没有，从数据库取出");
            userList=userRepository.findAll();
            redisUtil.hset("shop","userList",userList);
         }
@@ -51,11 +50,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User updateOrSave(User user) {
+        redisUtil.hdel("shop","userList");
         return userRepository.save(user);
     }
 
     @Override
     public void deleteById(Integer id) {
+        redisUtil.hdel("shop","userList");
         userRepository.deleteById(id);
     }
 

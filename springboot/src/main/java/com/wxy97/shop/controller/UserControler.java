@@ -4,10 +4,7 @@ import com.wxy97.shop.result.Result;
 import com.wxy97.shop.result.ResultFactory;
 import com.wxy97.shop.service.UserService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 /**
@@ -37,5 +34,11 @@ public class UserControler {
     public Result update(@RequestBody User user){
         User u = userServiceImpl.updateOrSave(user);
         return ResultFactory.buildSuccessResult(u,"操作成功");
+    }
+    @ApiOperation(value = "根据id删除")
+    @RequestMapping(value ="/u/delete")
+    public Result delete(@RequestBody User user){
+        userServiceImpl.deleteById(user.getId());
+        return ResultFactory.buildSuccessResult(null,"删除成功");
     }
 }
