@@ -67,7 +67,4 @@ public class LoginController {
         System.out.println(simpleHash.toString());
     }*/
 
-    public static void main(String[] args) {
-
-    }
 }

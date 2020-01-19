@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * @Author: wxySmile
- * @Date 20-1-6 下午12:21
+ * @Date 20-1-9 下午12:50
  */
-public interface RoleRepostory extends JpaRepository<Role,Integer> {
+public interface RoleRepository extends JpaRepository<Role , Integer> {
+
 }

@@ -24,7 +24,7 @@
               <span>{{ item.name }}</span>
             </template>
             <!--二级菜单-->
-            <el-menu-item :index="'/'+item.path" v-for="child in item.children" :key="child.id">
+            <el-menu-item :index="'/'+child.path" v-for="child in item.children" :key="child.id">
               <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>{{ child.name }}</span>
