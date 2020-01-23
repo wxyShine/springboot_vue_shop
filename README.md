@@ -16,13 +16,13 @@
 #### 7.Redis
 
 ### 登录界面
-![](https://gitee.com/wxy97/images/raw/master/2020/01/login.png)
+![login](https://gitee.com/wxy97/images/raw/master/2020/01/login.png)
+
 ### 后台主界面 
-![lwdzkQ.png](https://s2.ax1x.com/2020/01/04/lwdzkQ.png) 
+![main](https://gitee.com/wxy97/images/raw/master/2020/01/main.png)   
+
 ### 用户管理模块
 #### 用户列表
-![lwwCpn.png](https://s2.ax1x.com/2020/01/04/lwwCpn.png)
- 
- 
- 
+![user](https://gitee.com/wxy97/images/raw/master/2020/01/user.png)  
+
  #### 目前处于开发中状态...
