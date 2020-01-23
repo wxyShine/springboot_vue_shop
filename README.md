@@ -16,7 +16,7 @@
 #### 7.Redis
 
 ### 登录界面
-![login.png](https://gitee.com/wxy97/images/raw/master/2020/01/login.png)
+![](https://gitee.com/wxy97/images/raw/master/2020/01/login.png)
 ### 后台主界面 
 ![lwdzkQ.png](https://s2.ax1x.com/2020/01/04/lwdzkQ.png) 
 ### 用户管理模块
