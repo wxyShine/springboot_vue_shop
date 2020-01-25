@@ -1,15 +1,16 @@
 package com.wxy97.shop.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,8 +24,8 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "s_rights")
-@Accessors(chain = true)//链式结构写法
-@JsonIgnoreProperties( {"handler", "fieldHandler"})
+@Accessors(chain = true)//链式结构
+
 public class Rights implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,13 +36,7 @@ public class Rights implements Serializable {
     private String path;
     private Integer  pid;
 
-    @ManyToMany(mappedBy = "rights")
-    @JsonIgnore
-    @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private List<Role> roles ;
-
     @Transient
     private List<Rights> children;
-
 
 }
