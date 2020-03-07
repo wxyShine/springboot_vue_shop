@@ -7,17 +7,17 @@
 >  springBoot2.2.2
 ## 涉及到的技术
 ### 前端采用技术
-> 1.Vue
-> 2.ElementUI
-> 3.axios 
+> 1.Vue  
+> 2.ElementUI  
+> 3.axios   
 ### 后端采用技术
-> 1.Spring Boot
-> 2.Spring Data + JPA 
-> 3.MySQL
-> 4.Hikari
-> 5.Shiro
-> 6.JWT
-> 7.Redis
+> 1.Spring Boot  
+> 2.Spring Data + JPA   
+> 3.MySQL  
+> 4.Hikari  
+> 5.Shiro  
+> 6.JWT  
+> 7.Redis  
 
 ### 登录界面
 ![login](./images/login.png)
