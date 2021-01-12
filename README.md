@@ -1,5 +1,5 @@
 ![head](https://socialify.git.ci/wxyShine/springboot_vue_shop/png?description=1&forks=1&issues=0&pulls=0)
-# springboot_vue_shop
+
 前后端分离项目 使用Springboot+Vue进行开发
 ## 开发环境
 > win10 
