@@ -39,5 +39,5 @@
 #### 目前处于开发中状态...  
 
 #### 项目码云地址     
-> 后端 https://gitee.com/wxy97/springboot_shop.git  
-> 前端 https://gitee.com/wxy97/vue_shop.git
+> 后端 https://gitee.com/wxyShine/springboot_shop.git  
+> 前端 https://gitee.com/wxyShine/vue_shop.git
